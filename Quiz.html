@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Projet web</title>
+</head>
+<body>
+    <header class="header" >
+        <nav class="navv" >
+            <a href="#" ></a>
+            <div class="nav__menu" >
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link ">
+                            <i class="uil uil-estate"></i> Accueil
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="competences.html" class="nav__link">
+                            <i class="uil uil-file-alt "></i>Compétences
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="parcours_academique.html" class="nav__link">
+                            <i class="uil uil-briefcase"></i>Parcours
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="stages_experiences.html" class="nav__link">Projets
+                            <i class="uil uil-scenery "></i> 
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="Evénements.html" class="nav__link">Evénements
+                            <i class="uil uil-scenery"></i> 
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="passions.html" class="nav__link">Passions
+                            <i class="uil uil-scenery"></i> 
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="Quiz.html" class="nav__link">Quiz
+                            <i class="uil uil-scenery"></i> 
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">
+                            <i class="uil uil-message "></i> Contact
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="temoinagage.html" class="nav__link">
+                            <i class="uil uil-message"></i> temoinagage
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+<section class="all">
+  <div class="container">
+      <h2>Quiz sur la Culture Générale</h2>
+      <form id="quizForm">
+        <label for="q1">1. En quelle année Netflix a-t-il été créé ?</label>
+        <input type="radio" name="q1" value="a"> 1997
+        <input type="radio" name="q1" value="b"> 2001
+        <input type="radio" name="q1" value="c"> 2009
+        
+        <label for="q2">2. Qui a inventé le World Wide Web, et en quelle année ?</label>
+        <input type="radio" name="q2" value="a"> Tim Berners-Lee en 1990
+        <input type="radio" name="q2" value="b"> Paul Kunz 1991
+        <input type="radio" name="q2" value="c"> Marc Andreessen 1993
+    
+        <label for="q3">3. Quelle langue comprend le plus grand nombre de mots ?</label>
+        <input type="radio" name="q3" value="a"> Français
+        <input type="radio" name="q3" value="b"> Anglais
+        <input type="radio" name="q3" value="c"> Arabe
+    
+        <label for="q4">4. Quelle est la capitale du Canada ?</label>
+        <input type="radio" name="q4" value="a"> Toronto
+        <input type="radio" name="q4" value="b"> Montréal
+        <input type="radio" name="q4" value="c"> Ottawa
+    
+        <label for="q5">5. Qui a inventé l'emblématique petite robe noire ?</label>
+        <input type="radio" name="q5" value="a"> Coco Chanel
+        <input type="radio" name="q5" value="b"> Jean Patou
+        <input type="radio" name="q5" value="c"> Givenchy
+    
+        <label for="q6">6. Combien de rayures y a-t-il sur le drapeau américain ?</label>
+        <input type="radio" name="q6" value="a"> 17
+        <input type="radio" name="q6" value="b"> 10
+        <input type="radio" name="q6" value="c"> 13
+    
+        <label for="q7">7. Quel est le nom de la série de livres la plus vendue du 21e siècle ?</label>
+        <input type="radio" name="q7" value="a"> Twilight
+        <input type="radio" name="q7" value="b"> Harry Potter
+        <input type="radio" name="q7" value="c"> Hunger Games
+    
+        <label for="q8">8. De combien de touches un piano classique est-il doté ?</label>
+        <input type="radio" name="q8" value="a"> 88
+        <input type="radio" name="q8" value="b"> 100
+        <input type="radio" name="q8" value="c"> 99
+    
+        <label for="q9">9. Quel est le nom du plus long fleuve du monde ?</label>
+        <input type="radio" name="q9" value="a"> L'Amazone
+        <input type="radio" name="q9" value="b"> Nil
+        <input type="radio" name="q9" value="c"> Le Mékong
+    
+        <label for="q10">10. Quel est l'animal national de l'Australie ?</label>
+        <input type="radio" name="q10" value="a"> Le Lion
+        <input type="radio" name="q10" value="b"> Le Koala
+        <input type="radio" name="q10" value="c"> Le kangourou rouge
+        </br>
+        
+        <div class="container">
+            <button type="button" onclick="calculatescore()" class="valid">Valider</button>
+        </div>
+    </form>
+    
+    <!-- Container to display results -->
+    <div id="result"></div>
+  </div>
+</section>
+    <script>
+      var answers = {
+        'q1': 'a',
+        'q2': 'a',
+        'q3': 'b',
+        'q4': 'c',
+        'q5': 'a',
+        'q6': 'c',
+        'q7': 'b',
+        'q8': 'a',
+        'q9': 'b',
+        'q10': 'c',
+      };
+    
+      function calculatescore() {
+        var score = 0;
+        var correctQuestions = [];
+        
+        // Loop through each question and check the selected answer
+        for (var j = 1; j <= Object.keys(answers).length; j++) {
+          var selectedAnswer = document.querySelector('input[name="q' + j + '"]:checked');
+          if (selectedAnswer) {
+            if (selectedAnswer.value === answers['q' + j]) {
+              score++;
+              correctQuestions.push(j); // Store correct question numbers
+            }
+          }
+        }
+        
+        // Display the result after calculation
+        displayResults(score, correctQuestions);
+      }
+    
+      function displayResults(score, correctQuestions) {
+        var resultHTML = '<h2>Résultats du Quiz</h2>';
+        
+        // Display correct questions if there are any
+        if (correctQuestions.length > 0) {
+          resultHTML += '<p>Questions correctes: ' + correctQuestions.join(', ') + '</p>';
+        } else {
+          resultHTML += '<p>Aucune question correcte.</p>';
+        }
+        
+        // Display total score
+        resultHTML += '<p>Total Score: ' + score + '/' + Object.keys(answers).length + '</p>';
+        
+        // Show results in the result container
+        document.getElementById('result').innerHTML = resultHTML;
+      }
+    </script>
+    
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-logo">Rejoignez-moi :</div>
+      <div class="footer-social">
+          <a href="https://www.linkedin.com/in/yosr-cheikhrouhou-2a24a2249/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/yosr.cheikhrouhou" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="footer-text">© 2024   Yosr Cheikhrouhou. Tous droits réservés.</p>
+  </div>
+</footer>
+  </body>
+  </html>

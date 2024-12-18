@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Projet web</title>
+</head>
+<body>
+    <header class="header" >
+        <nav class="navv" >
+            <a href="#" ></a>
+            <div class="nav__menu" >
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link ">
+                            <i class="uil uil-estate"></i> Accueil
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="competences.html" class="nav__link">
+                            <i class="uil uil-file-alt "></i>Compétences
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="parcours_academique.html" class="nav__link">
+                            <i class="uil uil-briefcase"></i>Parcours
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="stages_experiences.html" class="nav__link">Projets
+                            <i class="uil uil-scenery "></i> 
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="Evénements.html" class="nav__link">Evénements
+                            <i class="uil uil-scenery"></i> 
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="passions.html" class="nav__link">Passions
+                            <i class="uil uil-scenery"></i> 
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="Quiz.html" class="nav__link">Quiz
+                            <i class="uil uil-scenery"></i> 
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">
+                            <i class="uil uil-message "></i> Contact
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="temoinagage.html" class="nav__link">
+                            <i class="uil uil-message"></i> temoinagage
+                        </a>
+                    </li>
+                </ul>
+             
+            </div>
+            </div>
+        </nav>
+    </header>
+    <section class="all">
+        <div class="container">
+            <div class="contactez-nous">
+                <h1>Contactez-nous</h1>
+                <p class="contact-message">
+                    Un problème, une question, envie de nous envoyer un message ? 
+                    N’hésitez pas à utiliser ce formulaire pour prendre contact avec nous !
+                </p>
+                <!-- Enlevez "action" car le traitement est fait côté client -->
+                <form id="contactForm" onsubmit="return validateForm();">
+                    <div>
+                        <label for="nom">Votre nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Nom" required>
+                    </div>
+                    <div>
+                        <label for="email">Votre e-mail</label>
+                        <input type="email" id="email" name="email" placeholder="monadresse@mail.com" required>
+                    </div>
+                    <div>
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" placeholder="Bonjour, je vous contacte car...." required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="custom-button">Envoyer mon message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">Rejoignez-moi :</div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/yosr-cheikhrouhou-2a24a2249/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/yosr.cheikhrouhou" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="footer-text">© 2024   Yosr Cheikhrouhou. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script>
+    // Fonction de validation du formulaire
+    function validateForm() {
+        // Récupérer les valeurs des champs
+        var name = document.getElementById("nom").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+    
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+        if (!this.checkValidity()) {
+        alert("Veuillez remplir tous les champs correctement.");
+        event.preventDefault(); // Empêche l'envoi du formulaire
+    }
+});
+
+        // Validation de l'email (expression régulière simple)
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!email.match(emailPattern)) {
+            alert("Veuillez entrer une adresse email valide.");
+            return false; // Empêche l'envoi du formulaire
+        }
+        // Afficher un message de confirmation sans envoyer les données
+        document.getElementById("contactForm").style.display = "none"; // Masquer le formulaire
+        var confirmationMessage = document.createElement("p");
+        confirmationMessage.innerHTML = "Merci, votre message a été envoyé avec succès !";
+        confirmationMessage.style.color = "green";
+        confirmationMessage.style.fontSize = "18px";
+        confirmationMessage.style.marginTop = "20px";
+    
+        document.querySelector(".contactez-nous").appendChild(confirmationMessage);
+    
+        return false; // Empêche l'envoi du formulaire pour rester sur la page
+    }
+    </script>
+    
+</body>
+</html>
